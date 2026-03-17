@@ -1,0 +1,18 @@
+{
+  "name": "huaneng-dashboard",
+  "version": "1.0.0",
+  "description": "华能清能院库布齐生态观测站数据平台",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "echarts": "^5.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}
