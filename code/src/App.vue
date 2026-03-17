@@ -614,7 +614,15 @@ const v = (x) => {
 
 async function fetchData() {
   try {
-    const res = await fetch(API_URL)
+    // 实时数据接口不应该被缓存；线上若启用 ETag/Last-Modified 可能返回 304 导致无 body
+    const res = await fetch(API_URL, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+      },
+    })
+    if (res.status === 304) return
     const json = await res.json()
     if(json.code !== 0) return
     const d = roundApiData(json.data)
